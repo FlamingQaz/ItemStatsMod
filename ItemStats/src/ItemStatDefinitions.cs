@@ -199,6 +199,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Kjaro's Band
 			ItemDefs[ItemCatalog.FindItemIndex("FireRing")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -403,6 +404,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Brittle Crown
 			ItemDefs[ItemCatalog.FindItemIndex("GoldOnHit")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -429,6 +431,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Personal Shield
 			ItemDefs[ItemCatalog.FindItemIndex("PersonalShield")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -458,6 +461,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Rusted Key
 			ItemDefs[ItemCatalog.FindItemIndex("TreasureCache")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -469,6 +473,7 @@ namespace ItemStats
 					),
 				}
 			};
+			//Sentient Meat Hook
 			ItemDefs[ItemCatalog.FindItemIndex("BounceNearby")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -494,6 +499,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Rose Buckler
 			ItemDefs[ItemCatalog.FindItemIndex("SprintArmor")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -504,6 +510,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Unstable Tesla Coil
 			ItemDefs[ItemCatalog.FindItemIndex("ShockNearby")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -514,6 +521,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Queen's Gland
 			ItemDefs[ItemCatalog.FindItemIndex("BeetleGland")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -534,6 +542,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Sticky Bomb
 			ItemDefs[ItemCatalog.FindItemIndex("StickyBomb")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -570,6 +579,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Dio's Best Friend
 			ItemDefs[ItemCatalog.FindItemIndex("ExtraLife")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -580,6 +590,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Alien Head
 			ItemDefs[ItemCatalog.FindItemIndex("AlienHead")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -590,6 +601,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Fireworks
 			ItemDefs[ItemCatalog.FindItemIndex("Firework")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -600,6 +612,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//ATG attack missle
 			ItemDefs[ItemCatalog.FindItemIndex("Missile")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -615,6 +628,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Infusion
 			ItemDefs[ItemCatalog.FindItemIndex("Infusion")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -653,6 +667,7 @@ namespace ItemStats
 					)
 				}
 			};
+			//Brilliant Behemoth
 			ItemDefs[ItemCatalog.FindItemIndex("Behemoth")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -673,6 +688,7 @@ namespace ItemStats
 					)
 				}
 			};
+
 			ItemDefs[ItemCatalog.FindItemIndex("BarrierOnOverHeal")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -762,6 +778,7 @@ namespace ItemStats
 						})
 				}
 			};
+			//Focus Crystal 
 			ItemDefs[ItemCatalog.FindItemIndex("NearbyDamageBonus")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -1081,6 +1098,7 @@ namespace ItemStats
 					)
 				}
 			};
+
 			ItemDefs[ItemCatalog.FindItemIndex("BleedOnHitAndExplode")] = new ItemStatDef
 			{
 				Stats = new List<ItemStat>
@@ -1370,6 +1388,17 @@ namespace ItemStats
 					),
 				},
 			};
+			// Oddly-Shaped Opal
+			ItemDefs[ItemCatalog.FindItemIndex("OutOfCombatArmor")] = new ItemStatDef
+            {
+                Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => itemCount / (itemCount + 1f),
+						(value, ctx) => $"Damage Reduction: {value.FormatPercentage()}"
+					),
+				},
+			};
 			// Delicate Watch
 			ItemDefs[ItemCatalog.FindItemIndex("FragileDamageBonus")] = new ItemStatDef
 			{
@@ -1380,6 +1409,176 @@ namespace ItemStats
 						(value, ctx) => $"Damage Increase: {value.FormatPercentage()}"
 					),
 				},
+			};
+			// Shuriken
+			ItemDefs[ItemCatalog.FindItemIndex("PrimarySkillShuriken")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+								{
+					new ItemStat(
+						(itemCount, ctx) => 4f + (itemCount - 1f),
+						(value, ctx) => $"Total Shuriken Damage: {value.FormatPercentage()}"
+					),
+					new ItemStat(
+						(itemCount, ctx) => 3f + (itemCount - 1f),
+						(value, ctx) => $"Max Stacks: {value.FormatInt()}"
+						
+					),
+					new ItemStat(
+						(itemCount, ctx) => 10 / itemCount,
+						(value, ctx) => $"Cooldown: {value.FormatInt("s",1)}"
+
+					)
+				},
+			};
+			// Roll of Pennies
+			ItemDefs[ItemCatalog.FindItemIndex("GoldOnHurt")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+					{
+						new ItemStat(
+							(itemCount, ctx) => itemCount * 3f * Run.instance.difficultyCoefficient,
+							(value, ctx) => $"Gold per Hit(*): {value.FormatInt()}"
+						),
+					},
+			};
+			// Ben's Raincoat
+			ItemDefs[ItemCatalog.FindItemIndex("ImmuneToDebuff")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => itemCount * 100f,
+						(value, ctx) => $"Maximum Health Increase: {value.FormatPercentage()}"
+					),
+				},
+			};
+			// Bottled Chaos
+			ItemDefs[ItemCatalog.FindItemIndex("RandomEquipmentTrigger")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => itemCount,
+						(value, ctx) => $"Random Effects: {value.FormatInt()}"
+					),
+				},
+			};
+			// Pocket ICBM
+			ItemDefs[ItemCatalog.FindItemIndex("MoreMissile")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => itemCount * 50f,
+						(value, ctx) => $"Random Effects: {value.FormatPercentage()}"
+					),
+				},
+			};
+			// Egocentrism
+			ItemDefs[ItemCatalog.FindItemIndex("LunarSun")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) =>0.11113f + (1.4015f/itemCount),
+						(value, ctx) => $"Charge Time: {value.FormatInt("s", 1)}"
+					),
+					new ItemStat(
+						(itemCount, ctx) => itemCount + 2f,
+						(value, ctx) => $"Max Bombs: {value.FormatInt()}"
+					),
+				},
+			};
+			// Eulogy Zero
+			ItemDefs[ItemCatalog.FindItemIndex("RandomlyLunar")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => 5f * itemCount,
+						(value, ctx) => $"Charge Time: {value.FormatPercentage()}"
+					),
+				},
+			};
+			// Light Flux Pauldron
+			ItemDefs[ItemCatalog.FindItemIndex("HalfAttackSpeedHalfCooldowns")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => 1 - (0.1358f + 0.3669f / itemCount) ,
+						(value, ctx) => $"Skill Cooldowns: {value.FormatPercentage()}"
+					),
+					new ItemStat(
+						(itemCount, ctx) => 1 - (0.1358f + 0.3669f / itemCount),
+						(value, ctx) => $"Attack Speed: {value.FormatPercentage()}"
+					),
+				},
+			};
+			// Stone Flux Pauldron
+			ItemDefs[ItemCatalog.FindItemIndex("HalfSpeedDoubleHealth")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => 100f*itemCount,
+						(value, ctx) => $"Max Health Increase: {value.FormatPercentage()}"
+					),
+					new ItemStat(
+						(itemCount, ctx) => 1 - (0.1358f + 0.3669f / itemCount),
+						(value, ctx) => $"Movement Speed Reduced: {value.FormatPercentage()}"
+					),
+				},
+			};
+			//Encrusted Key
+			ItemDefs[ItemCatalog.FindItemIndex("TreasureCacheVoid")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => itemCount,
+						(value, ctx) => $"Unlockable Caches: {value}"
+						// StatModifiers.TreasureCache
+					),
+				}
+			};
+			//Pluripotent Larva
+			ItemDefs[ItemCatalog.FindItemIndex("ExtraLifeVoid")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => itemCount,
+						(value, ctx) => $"Extra Lives: {value.FormatInt()}"
+					)
+				}
+			};
+			//Singularity Band
+			ItemDefs[ItemCatalog.FindItemIndex("ElementalRingVoid")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => itemCount,
+						(value, ctx) => $"Black Hole Damage: {value.FormatPercentage()}"
+					)
+				}
+			};
+			//Newly Hatched Zoea
+			ItemDefs[ItemCatalog.FindItemIndex("VoidMegaCrabItem")] = new ItemStatDef
+			{
+				Stats = new List<ItemStat>
+				{
+					new ItemStat(
+						(itemCount, ctx) => 1f + 120f / (1f - 2f * itemCount),
+						(value, ctx) => $"Cooldown: {value.FormatInt("s",1)}"
+					),
+					new ItemStat(
+						(itemCount, ctx) => itemCount,
+						(value, ctx) => $"Allies: {value.FormatInt()}"
+					)
+				}
 			};
 		}
 	}
